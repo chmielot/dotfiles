@@ -6,5 +6,8 @@
 - name: user | create dotfile symlinks
   command: make create_dotfile_symlinks chdir=../
 
+- name: user | configure osx
+  command: make configure_osx chdir=../
+
 #- name: user | install vim plugins
 #  shell: vim +BundleInstall +qall
