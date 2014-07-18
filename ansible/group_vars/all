@@ -24,6 +24,7 @@ homebrew_brews:
 - gist
 - git
 - git-extras
+- git-crypt
 - graphviz
 - grep
 - heroku-toolbelt
