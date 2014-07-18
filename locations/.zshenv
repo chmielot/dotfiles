@@ -1,0 +1,1 @@
+../topics/zsh/zshenv

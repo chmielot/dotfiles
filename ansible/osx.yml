@@ -1,0 +1,5 @@
+---
+- hosts: targets
+  tasks:
+  - include: tasks/homebrew.yml
+  - include: tasks/user.yml

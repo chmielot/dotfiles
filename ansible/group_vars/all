@@ -1,0 +1,99 @@
+homebrew_taps:
+- homebrew/dupes
+- caskroom/cask
+- caskroom/versions
+
+homebrew_brews:
+- aespipe
+- ant
+- autoconf
+- automake
+- brew-cask
+- coreutils
+- ctags
+- ctags-exuberant
+- curl
+- dos2unix
+- findutils install_options=default-names
+- ffmpeg
+- freetype
+- gawk
+- gdbm
+- gettext
+- ghostscript
+- gist
+- git
+- git-extras
+- graphviz
+- grep
+- heroku-toolbelt
+- htop-osx
+- imagemagick
+- jbig2dec
+- jpeg
+- less
+- libidn
+- libjpeg
+- libpng
+- libtiff
+- libtool
+- little-cms
+- little-cms2
+- mercurial
+- ngrep
+- nvm
+- openssl
+- ossp-uuid
+- pcre
+- pigz
+- pkg-config
+- postgresql
+- pwgen
+- pyenv
+- pyenv-virtualenv
+- rbenv
+- readline
+- rename
+- ruby-build
+- rsync
+- s3cmd
+- tig
+- tree
+- vim install_options=with-ruby,with-python,override-system-vi
+- webp
+- wget install_options=enable-iri
+- xz
+- youtube-dl
+- zopfli
+- zsh install_options=disable-etcdir
+
+homebrew_casks:
+- adium
+- arq
+- atom
+- bittorrent-sync
+- caffeine
+- charles
+- dash
+- dropbox
+- firefox
+- flash
+- gas-mask
+- google-chrome-beta
+- imagealpha
+- imageoptim
+- istat-menus
+- iterm2
+- java
+- jumpcut
+- mplayerx
+- onepassword
+- opera
+- skype
+- spotify
+- the-unarchiver
+- torbrowser
+- utorrent
+- vagrant
+- virtualbox
+- vlc

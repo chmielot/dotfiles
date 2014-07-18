@@ -1,0 +1,23 @@
+- name: homebrew | brew update 1
+  homebrew: update_homebrew=yes
+
+- name: homebrew | brew tap
+  homebrew_tap: name={{ item }} state=present
+  with_items: homebrew_taps
+
+- name: homebrew | brew update 2
+  homebrew: update_homebrew=yes
+
+- name: homebrew | brew install
+  homebrew: name={{ item }} state=upgraded
+  with_items: homebrew_brews
+
+- name: homebrew | brew cask install
+  homebrew_cask: name={{ item }} state=installed
+  with_items: homebrew_casks
+
+- name: homebrew | brew cleanup
+  command: brew cleanup
+
+- name: homebrew | brew cask cleanup
+  command: brew cask cleanup

@@ -1,0 +1,6 @@
+[submodule "topics/zsh/antigen"]
+	path = topics/zsh/antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "topics/vim/Vundle.vim"]
+	path = topics/vim/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim.git

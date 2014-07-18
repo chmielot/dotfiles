@@ -1,0 +1,13 @@
+---
+
+- name: user | use zsh by default
+  command: chsh -s /bin/zsh
+
+- name: user | create dotfile symlinks
+  command: make create_dotfile_symlinks chdir=../
+
+- name: user | create cask symlinks
+  command: make create_cask_symlinks chdir=../
+
+#- name: user | install vim plugins
+#  shell: vim +BundleInstall +qall
