@@ -24,3 +24,6 @@
   'hideVcsIgnoredFiles': true
 'autosave': {}
 'autocomplete-plus': {}
+'minimap':
+  'minimapScrollIndicator': false
+  'autoToggle': true

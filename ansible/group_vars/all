@@ -331,3 +331,5 @@ user_atom_packages:
 - autocomplete-snippets
 - file-icons
 - sort-lines
+- open-recent
+- minimap
