@@ -15,6 +15,7 @@
   'useReactEditor': true
   'disabledPackages': [
     'autocomplete'
+    'metrics'
   ]
   'audioBeep': false
 'tree-view':
