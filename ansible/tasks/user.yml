@@ -38,7 +38,7 @@
   shell: killall {{ item }} 2> /dev/null; true
   with_items: user_osx_restart_apps
 
-- debug: msg="Note that some of these changes require a logout/restart to take effect."
+- name: user | install vim plugins
+  shell: vim +BundleInstall +qall
 
-#- name: user | install vim plugins
-#  shell: vim +BundleInstall +qall
+- debug: msg="Note that some of these changes require a logout/restart to take effect."
