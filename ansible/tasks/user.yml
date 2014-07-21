@@ -41,4 +41,8 @@
 - name: user | install vim plugins
   shell: vim +BundleInstall +qall
 
+- name: user | install atom packages
+  command: apm install {{ item }} creates=../topics/atom/packages/{{ item }}
+  with_items: user_atom_packages
+
 - debug: msg="Note that some of these changes require a logout/restart to take effect."

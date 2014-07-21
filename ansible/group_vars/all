@@ -322,3 +322,10 @@ user_osx_restart_apps:
 - Transmission
 - Twitter
 - iCal
+
+user_atom_packages:
+- autocomplete-paths
+- autocomplete-plus
+- autocomplete-snippets
+- file-icons
+- sort-lines

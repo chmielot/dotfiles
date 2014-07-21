@@ -16,10 +16,11 @@
   'disabledPackages': [
     'autocomplete'
     'metrics'
+    'autosave'
   ]
   'audioBeep': false
 'tree-view':
   'hideIgnoredNames': true
   'hideVcsIgnoredFiles': true
-'autosave':
-  'enabled': true
+'autosave': {}
+'autocomplete-plus': {}
