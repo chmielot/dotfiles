@@ -1,13 +1,44 @@
 ---
 
+- name: user | update sudo timestamp
+  command: sudo -v
+
 - name: user | use zsh by default
-  command: chsh -s /bin/zsh
+  command: sudo chsh -s /bin/zsh
 
 - name: user | create dotfile symlinks
   command: make create_dotfile_symlinks chdir=../
 
-- name: user | configure osx
-  command: make configure_osx chdir=../
+- name: user | disable the sound effects on boot
+  command: sudo nvram SystemAudioVolume=" "
+
+- name: user | remove duplicates in the “Open With” menu
+  command: /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
+- name: user | restart automatically if the computer freezes
+  command: systemsetup -setrestartfreeze on
+
+- name: user | disable the sudden motion sensor as it’s not useful for SSDs
+  command: sudo pmset -a sms 0
+
+- name: user | set the timezone
+  command: systemsetup -settimezone "Europe/Berlin"
+
+- name: user | show the ~/Library folder
+  shell: chflags nohidden $HOME/Library
+
+- name: user | install iTerm2 theme
+  command: open -a /Applications/iTerm.app topics/iTerm2/Jellybeans.itermcolors chdir=../
+
+- name: user | configure osx user defaults
+  command: defaults write {{ item }}
+  with_items: user_osx_defaults
+
+- name: user | kill affected applications
+  shell: killall {{ item }} 2> /dev/null; true
+  with_items: user_osx_restart_apps
+
+- debug: msg="Note that some of these changes require a logout/restart to take effect."
 
 #- name: user | install vim plugins
 #  shell: vim +BundleInstall +qall
