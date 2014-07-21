@@ -16,6 +16,9 @@
   'disabledPackages': [
     'autocomplete'
   ]
+  'audioBeep': false
 'tree-view':
   'hideIgnoredNames': true
   'hideVcsIgnoredFiles': true
+'autosave':
+  'enabled': true
