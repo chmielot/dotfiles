@@ -73,6 +73,7 @@ homebrew_casks:
 - arq
 - atom
 - bittorrent-sync
+- boom
 - caffeine
 - charles
 - dash
