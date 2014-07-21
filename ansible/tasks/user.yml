@@ -31,12 +31,8 @@
   command: open -a /Applications/iTerm.app topics/iTerm2/Jellybeans.itermcolors chdir=../
 
 - name: user | configure osx user defaults
-  command: defaults write {{ item }}
+  shell: defaults write {{ item }}
   with_items: user_osx_defaults
-
-- name: user | kill affected applications
-  shell: killall {{ item }} 2> /dev/null; true
-  with_items: user_osx_restart_apps
 
 - name: user | install vim plugins
   shell: vim +BundleInstall +qall
@@ -46,3 +42,7 @@
   with_items: user_atom_packages
 
 - debug: msg="Note that some of these changes require a logout/restart to take effect."
+
+- name: user | kill affected applications
+  shell: killall {{ item }} 2> /dev/null; true
+  with_items: user_osx_restart_apps

@@ -303,8 +303,9 @@ user_osx_defaults:
 # Only use UTF-8 in Terminal.app
 - com.appleterminal StringEncodings -array 4
 
-# Don’t display the annoying prompt when quitting iTerm
-- com.googlecode.iterm2 PromptOnQuit -bool false
+# Set iTerm2 configuration folder
+- com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.iTerm2/"
+- com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
 user_osx_restart_apps:
 - Activity Monitor
@@ -321,6 +322,7 @@ user_osx_restart_apps:
 - Terminal
 - Transmission
 - Twitter
+- iTerm
 - iCal
 
 user_atom_packages:
