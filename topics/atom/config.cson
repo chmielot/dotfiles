@@ -1,0 +1,21 @@
+'exception-reporting':
+  'userId': 'd4e89bdf-aa0a-1af5-0008-36e2fcbc723e'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': 'e0dcf8f357567319382406d370e814362142692b'
+'editor':
+  'fontSize': 16
+  'tabLength': 4
+'core':
+  'themes': [
+    'atom-dark-ui'
+    'solarized-dark-syntax'
+  ]
+  'useReactEditor': true
+  'disabledPackages': [
+    'autocomplete'
+  ]
+'tree-view':
+  'hideIgnoredNames': true
+  'hideVcsIgnoredFiles': true
