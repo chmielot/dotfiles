@@ -307,6 +307,40 @@ user_osx_defaults:
 - com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.iTerm2/"
 - com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
+###############################################################################
+# iStat Menus                                                                 #
+###############################################################################
+
+- com.bjango.istatmenus.extras BatteryCustomizeStates -bool false
+- com.bjango.istatmenus.extras BatteryHideUPSFromMenubar -bool false
+- com.bjango.istatmenus.extras CalShowWeekNumbers -bool true
+- com.bjango.istatmenus.extras ClockFlashSeperators -bool true
+- com.bjango.istatmenus.extras ClockShowMoon -bool false
+- com.bjango.istatmenus.extras DiskGroupItems -bool false
+- com.bjango.istatmenus.extras DisksShowRemovable -bool false
+- com.bjango.istatmenus.extras NetworkDataFormat -bool true
+- com.bjango.istatmenus.extras NetworkDecimalLevel -bool true
+- com.bjango.istatmenus.extras NetworkGraphMode -bool false
+- com.bjango.istatmenus.extras ClockShowMoon -bool false
+- com.bjango.istatmenus.extras cities -array
+- com.bjango.istatmenus.extras WorldClockDisplayMode -array HH "':'" mm
+- com.bjango.istatmenus.extras ClockDisplayMode -array EE "' '" HH "':'" mm
+- com.bjango.istatmenus.extras cities -array
+
+user_osx_menubar:
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusTemps.menu
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusNetwork.menu
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusMemory.menu
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusDrives.menu
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusCPU.menu
+- /System/Library/CoreServices/Menu Extras/TimeMachine.menu
+- /System/Library/CoreServices/Menu Extras/Bluetooth.menu
+- /System/Library/CoreServices/Menu Extras/AirPort.menu
+- /System/Library/CoreServices/Menu Extras/Volume.menu
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusBattery.menu
+- /Library/Application Support/iStat Menus 4/extras/iStatMenusDateAndTimes.menu
+- /Library/Application Support/iStat Menus 4/extras/MenuCracker.menu
+
 user_osx_restart_apps:
 - Activity Monitor
 - Address Book
