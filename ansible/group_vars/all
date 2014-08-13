@@ -67,6 +67,7 @@ homebrew_brews:
 - youtube-dl
 - zopfli
 - zsh install_options=disable-etcdir
+- zlib
 
 homebrew_casks:
 - adium
