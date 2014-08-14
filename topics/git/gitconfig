@@ -79,3 +79,5 @@
     rebase = true
 [diff]
     algorithm = patience
+[include]
+    path = ~/.gitconfig_modix
