@@ -8,7 +8,6 @@ antigen bundle brew-cask
 antigen bundle colored-man
 antigen bundle command-not-found
 antigen bundle dirpersist
-antigen bundle emoji-clock
 antigen bundle encode64
 antigen bundle extract
 antigen bundle gem
