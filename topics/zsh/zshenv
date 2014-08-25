@@ -1,2 +1,5 @@
 # Use only one (global) application folder
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Ensure brew'ed tools are used
+export PATH="/usr/local/bin:$PATH"
