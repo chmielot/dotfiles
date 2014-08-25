@@ -37,6 +37,7 @@
     whitespace = trailing-space,space-before-tab,cr-at-eol
     editor = /usr/bin/vim
     logallrefupdates = true
+    preloadindex = 1
 [url "git@github.com:"]
     insteadOf = "gh:"
     pushInsteadOf = "github:"
