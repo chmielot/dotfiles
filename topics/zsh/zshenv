@@ -3,3 +3,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Ensure brew'ed tools are used
 export PATH="/usr/local/bin:$PATH"
+
+# Enable python shell magic
+export PYTHONSTARTUP="$HOME/.pythonrc"
