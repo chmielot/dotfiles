@@ -15,5 +15,9 @@ set fish_plugins brew extract aliases path lastcd
 # Path to your custom folder (default path is $FISH/custom)
 set fish_custom $HOME/.fish_custom/
 
+# TODO: move this somewhere else
+set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
+set -x PYTHONSTARTUP "$HOME/.pythonrc"
+
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
