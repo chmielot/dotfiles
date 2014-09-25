@@ -14,7 +14,9 @@
     remotes = remote -v
 [pretty]
     changelog = * %s
-    history = %C(yellow)%h %C(green)%ad%Cred%d %Creset%s%Cblue [%cn]
+    history = %C(yellow)%h %C(green)%ad%x08%x08%x08%x08%x08%x08%x08%x08%x08%C(red)%d %C(reset)%s %C(blue)[%cn]
+[log]
+    date = iso
 [color]
     branch = auto
     diff = auto
