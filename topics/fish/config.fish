@@ -1,6 +1,9 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
 
+# Disable greeting message
+set fish_greeting
+
 # Theme
 set fish_theme krisleech
 
