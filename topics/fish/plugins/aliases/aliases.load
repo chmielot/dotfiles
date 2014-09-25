@@ -42,6 +42,10 @@ function week; date +%V; end
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function update; sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update; end
 
+# From: https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/brew/brew.plugin.zsh
+function brews; brew list -1; end
+function bubu; brew update; and brew upgrade; and brew cleanup; end
+
 # IP addresses
 function ip; dig +short myip.opendns.com @resolver1.opendns.com $argv; end
 function localip; ipconfig getifaddr en1; end
