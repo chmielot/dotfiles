@@ -23,7 +23,11 @@
   'hideIgnoredNames': true
   'hideVcsIgnoredFiles': true
 'autosave': {}
-'autocomplete-plus': {}
+'autocomplete-plus':
+  'fileBlacklist': '.*'
 'minimap':
   'minimapScrollIndicator': false
   'autoToggle': true
+'linter': {}
+'linter-php':
+  'phpExecutablePath': '/usr/bin/php'
