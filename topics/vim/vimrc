@@ -491,7 +491,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " set makeprg=/Applications/Monkey/bin/trans_macos\ -config=debug\ -target=glfw\ -run\ %
 " nmap <Leader>r :make<CR>
 
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'airblade/vim-gitgutter'
 au BufWinEnter * sign define mysign
 au BufWinEnter * exe "sign place 1337 line=1 name=mysign buffer=" . bufnr('%')
 
