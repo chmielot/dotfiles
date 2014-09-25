@@ -1,153 +1,157 @@
-alias grep='grep --color'
-alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+function grep; command grep --color $argv; end
+function sgrep; grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} $argv; end
 
 # - Detect newer versions of ls is installed (e.g. "brew install coreutils")
-# - Use "l" as short and "ll" as long version
+# - Use "l" as short and "ll" as long version)
 which -a ls | grep gls > /dev/null
 if test $status -eq 0
-    alias l="ls -lh --color=auto"
-    alias ll="ls -alh --color=auto"
+    function l; ls -lh --color=auto $argv; end;
+    function ll; ls -alh --color=auto $argv; end;
 else
-    alias l="ls -lh -G"
-    alias ll="ls -alh -G"
+    function l; ls -lh -G $argv; end;
+    function ll; ls -alh -G $argv; end;
 end
 
-alias dud='du --max-depth=1 -h'
-alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+function dud; du --max-depth=1 -h; end
+function duf; du -sh *; end
+function fd; find . -type d -name $argv; end
+function ff; find . -type f -name $argv; end
 
 # List only directories
-alias lsd='l | grep "^d"'
+function lsd; l | grep "^d"; end
 
 # Shortcuts
-alias g="git"
-alias j="jobs"
-alias o="open"
-alias oo="open ."
-alias v="vim"
+function g; git $argv; end
+function j; jobs $argv; end
+function o; open $argv; end
+function oo; open .; end
+function v; vim $argv; end
 
-# Save one useless "q" ;)
-alias less='less --quit-if-one-screen'
+# Save one useless ; endq; end ;)
+function less; less --quit-if-one-screen $argv; end
 
 # Activate screen saver
-alias ss="/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+function ss; /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine; end
 
 # Gzip-enabled `curl`
-alias gurl="curl --compressed"
+function gurl; curl --compressed $argv; end
 
 # Get week number
-alias week='date +%V'
+function week; date +%V; end
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+function update; sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update; end
 
 # IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
-alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+function ip; dig +short myip.opendns.com @resolver1.opendns.com $argv; end
+function localip; ipconfig getifaddr en1; end
+function ips; ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'; end
 
 # Enhanced WHOIS lookups
-alias whois="whois -h whois-servers.net"
+function whois; whois -h whois-servers.net $argv; end
 
 # Flush Directory Service cache
-alias flush="dscacheutil -flushcache; and killall -HUP mDNSResponder"
+function flush; dscacheutil -flushcache; and killall -HUP mDNSResponder; end
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder"
+function lscleanup; /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder; end
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+function sniff; sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'; end
+function httpdump; sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E "Host\: .*|GET \/.*"; end
 
 # Canonical hex dump; some systems have this symlinked
-command -v hd > /dev/null; or alias hd="hexdump -C"
+command -v hd > /dev/null; or function hd; hexdump -C $argv; end
 
 # OS X has no `md5sum`, so use `md5` as a fallback
-command -v md5sum > /dev/null; or alias md5sum="md5"
+command -v md5sum > /dev/null; or function md5sum; md5 $argv; end
 
 # OS X has no `sha1sum`, so use `shasum` as a fallback
-command -v sha1sum > /dev/null; or alias sha1sum="shasum"
+command -v sha1sum > /dev/null; or function sha1sum; shasum $argv; end
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+function cleanup; find . -type f -name '*.DS_Store' -ls -delete; end
 
 # ROT13-encode text. Works for decoding, too! ;)
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+function rot13; tr a-zA-Z n-za-mN-ZA-M $argv; end
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash="sudo rm -rf /Volumes/*/.Trashes; sudo rm -rf ~/.Trash; sudo rm -rf /private/var/log/asl/*.asl"
+function emptytrash; sudo rm -rf /Volumes/*/.Trashes; sudo rm -rf ~/.Trash; sudo rm -rf /private/var/log/asl/*.asl; end
 
 # Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false; and killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true; and killall Finder"
+function hidedesktop; defaults write com.apple.finder CreateDesktop -bool false; and killall Finder; end
+function showdesktop; defaults write com.apple.finder CreateDesktop -bool true; and killall Finder; end
 
 # URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+function urlencode; python -c 'import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);'; end
 
 # Disable/Enable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-alias spoton="sudo mdutil -a -i on"
+function spotoff; sudo mdutil -a -i off; end
+function spoton; sudo mdutil -a -i on; end
 
 # One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS
-    alias "$method"="lwp-request -m '$method'"
-end
+function GET;     lwp-request -m 'GET'     $argv; end
+function HEAD;    lwp-request -m 'HEAD'    $argv; end
+function POST;    lwp-request -m 'POST'    $argv; end
+function PUT;     lwp-request -m 'PUT'     $argv; end
+function DELETE;  lwp-request -m 'DELETE'  $argv; end
+function TRACE;   lwp-request -m 'TRACE'   $argv; end
+function OPTIONS; lwp-request -m 'OPTIONS' $argv; end
 
 # Some git shortcuts
 #
 # hint: the second char (the one after the small "g" for git) is in UPPER CASE?
 #       WARNING! you're dealing with the _dangerous_ version of the lower case
 #       version. for example "ga" is quite safe but "gA" is not.
-alias gc="git checkout"
-alias gd="git diff --ignore-all-space"
-alias gds="git diff --ignore-all-space --stat"
-alias gD="git diff --cached --ignore-all-space"
-alias gDs="git diff --cached --ignore-all-space --stat"
-alias gs="git status --short --branch"
+function gc;  git checkout $argv; end
+function gd;  git diff --ignore-all-space $argv; end
+function gds; git diff --ignore-all-space --stat $argv; end
+function gD;  git diff --cached --ignore-all-space $argv; end
+function gDs; git diff --cached --ignore-all-space --stat $argv; end
+function gs;  git status --short --branch $argv; end
 
-alias gm="git commit --verbose"
-alias gM="git commit --message"
-alias gmA="git commit --all --verbose"
-alias gMA="git commit --all --message"
+function gm;  git commit --verbose $argv; end
+function gM;  git commit --message $argv; end
+function gmA; git commit --all --verbose $argv; end
+function gMA; git commit --all --message $argv; end
 
-alias ga="git add --patch"
-alias gA="git add --all"
+function ga;  git add --patch $argv; end
+function gA;  git add --all $argv; end
 
-alias gr="git reset"
-alias gr1="git reset HEAD^"
-alias gr2="git reset HEAD^^"
-alias gR="git reset        --hard"
-alias gR1="git reset HEAD^  --hard"
-alias gR2="git reset HEAD^^ --hard"
+function gr;  git reset $argv; end
+function gr1; git reset HEAD^ $argv; end
+function gr2; git reset HEAD^^ $argv; end
+function gR;  git reset        --hard $argv; end
+function gR1; git reset HEAD^  --hard $argv; end
+function gR2; git reset HEAD^^ --hard $argv; end
 
-alias gb="git branch --verbose"
-alias gB="git branch --verbose --all"
+function gb;  git branch --verbose $argv; end
+function gB;  git branch --verbose --all $argv; end
 
-alias gl="git log --pretty=history --decorate --graph --ignore-all-space"
-alias gL="gl --patch"
-alias gls="gl --stat"
-alias gLs="gL --stat"
+function gl;  git log --pretty=history --decorate --graph --ignore-all-space $argv; end
+function gL;  gl --patch $argv; end
+function gls; gl --stat $argv; end
+function gLs; gL --stat $argv; end
 # addition to be compatible with the filesystem "l" and "ll"
-alias gll="gL"
-alias glls="gLs"
+function gll; gL $argv; end
+function glls; gLs $argv; end
 
-alias gg="git grep"
-alias gG="git grep --untracked --no-exclude-standard"
+function gg;  git grep $argv; end
+function gG;  git grep --untracked --no-exclude-standard $argv; end
 
-alias gss="git stash save --include-untracked"
-alias gsl="git stash list"
-alias gsa="git stash apply"
-alias gsA="git stash pop"
+function gss; git stash save --include-untracked $argv; end
+function gsl; git stash list $argv; end
+function gsa; git stash apply $argv; end
+function gsA; git stash pop $argv; end
 
-alias gu="git pull            ; and [ -f .gitfat ]; and git fat pull"
-alias gU="git pull --no-rebase; and [ -f .gitfat ]; and git fat pull"
-alias gus="git svn fetch"
-alias gUs="git svn rebase"
+function gu;  git pull            ; and [ -f .gitfat ]; and git fat pull; end
+function gU;  git pull --no-rebase; and [ -f .gitfat ]; and git fat pull; end
+function gus; git svn fetch; end
+function gUs; git svn rebase; end
 
-alias gp="git push"
-alias gpF="git push --force"
-alias gP="git push --all        ; and git push --tags        ; and [ -f .gitfat ]; and git fat push"
-alias gPF="git push --all --force; and git push --tags --force; and [ -f .gitfat ]; and git fat push"
-alias gps="git svn dcommit"
+function gp;  git push $argv; end
+function gpF; git push --force $argv; end
+function gP;  git push --all        ; and git push --tags        ; and [ -f .gitfat ]; and git fat push; end
+function gPF; git push --all --force; and git push --tags --force; and [ -f .gitfat ]; and git fat push; end
+function gps; git svn dcommit; end
