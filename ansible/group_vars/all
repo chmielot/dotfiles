@@ -15,6 +15,7 @@ homebrew_brews:
 - curl
 - dos2unix
 - findutils install_options=default-names
+- fish
 - ffmpeg
 - freetype
 - gawk

@@ -1,0 +1,10 @@
+set -g lastcd_file "$HOME/.zsh_lastcd"
+
+function cd
+    builtin cd $argv
+    echo "$PWD" > $lastcd_file
+end
+
+if test -f $lastcd_file
+    builtin cd (cat $lastcd_file)
+end

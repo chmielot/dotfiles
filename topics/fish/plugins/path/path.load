@@ -1,0 +1,5 @@
+if test -f "$HOME/.path"
+    while read path_add
+        set -x PATH $PATH $path_add
+    end < ~/.path
+end
