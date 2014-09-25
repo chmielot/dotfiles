@@ -125,7 +125,7 @@ alias gR2="git reset HEAD^^ --hard"
 alias gb="git branch --verbose"
 alias gB="git branch --verbose --all"
 
-alias gl="git log --pretty=history --decorate --date=short --graph"
+alias gl="git log --pretty=history --decorate --graph --ignore-all-space"
 alias gL="gl --patch"
 alias gls="gl --stat"
 alias gLs="gL --stat"
