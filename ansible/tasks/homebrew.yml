@@ -14,11 +14,11 @@
   homebrew: name={{ item }} state=upgraded
   with_items: homebrew_brews
 
-- name: homebrew | brew cask install
-  homebrew_cask: name={{ item }} state=installed
-  with_items: homebrew_casks
-  environment:
-    HOMEBREW_CASK_OPTS: --appdir=/Applications
+#- name: homebrew | brew cask install
+#  homebrew_cask: name={{ item }} state=installed
+#  with_items: homebrew_casks
+#  environment:
+#    HOMEBREW_CASK_OPTS: --appdir=/Applications
 
 - name: homebrew | brew cleanup
   command: brew cleanup

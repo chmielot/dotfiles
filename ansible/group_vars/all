@@ -28,10 +28,8 @@ homebrew_brews:
 - git-crypt
 - graphviz
 - grep
-- heroku-toolbelt
 - htop-osx
 - imagemagick
-- jbig2dec
 - jpeg
 - less
 - libidn
@@ -41,7 +39,6 @@ homebrew_brews:
 - libtool
 - little-cms
 - little-cms2
-- mercurial
 - ngrep
 - nvm
 - openssl
@@ -49,16 +46,13 @@ homebrew_brews:
 - pcre
 - pigz
 - pkg-config
-- postgresql
 - pwgen
 - pyenv
 - pyenv-virtualenv
 - rbenv
 - readline
 - rename
-- ruby-build
 - rsync
-- s3cmd
 - tig
 - tree
 - vim install_options=with-ruby,with-python,override-system-vi
@@ -272,7 +266,7 @@ user_osx_defaults:
 - com.appledock expose-group-by-app -bool false
 
 # Disable Dashboard
-- com.appledashboard mcx-disabled -bool true
+# - com.appledashboard mcx-disabled -bool true
 
 # Don’t show Dashboard as a Space
 - com.appledock dashboard-in-overlay -bool true
@@ -290,7 +284,7 @@ user_osx_defaults:
 - com.appledock no-glass -bool false
 
 # Automatically hide and show the Dock
-- com.appledock autohide -bool true
+# - com.appledock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 - com.appledock showhidden -bool true
