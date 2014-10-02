@@ -1,6 +1,6 @@
 # Installation
 
-    curl https://raw.githubusercontent.com/michaelcontento/dotfiles/master/bin/bootstrap.sh | bash
+    curl https://raw.githubusercontent.com/chmielot/dotfiles/master/bin/bootstrap.sh | bash
 
 # Structure
 

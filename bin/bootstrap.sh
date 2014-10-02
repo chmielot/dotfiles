@@ -21,12 +21,12 @@ fi
 WORSPACE_DIR="$HOME/Workspace"
 mkdir -p $WORSPACE_DIR
 
-DOTFILES_DIR="$WORSPACE_DIR/michaelcontento/dotfiles"
-mkdir -p $WORSPACE_DIR/michaelcontento
+DOTFILES_DIR="$WORSPACE_DIR/chmielot/dotfiles"
+mkdir -p $WORSPACE_DIR/chmielot
 
 if [[ ! -d $DOTFILES_DIR ]]; then
     echo "Info   | Clone     | dotfiles"
-    git clone https://github.com/michaelcontento/dotfiles.git $DOTFILES_DIR
+    git clone https://github.com/chmielot/dotfiles.git $DOTFILES_DIR
     (cd $DOTFILES_DIR && git submodule update --init)
 fi
 

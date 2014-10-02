@@ -1,6 +1,6 @@
 [user]
-    name = Michael Contento
-    email = michaelcontento@gmail.com
+    name = Thomas Chmielowiec
+    email = thomas.chmielowiec@modix.eu
 [tig]
     show-refs = yes
     tab-size = 4
@@ -65,7 +65,7 @@
     versiontag = RELEASE_
 [github]
     token =
-    user = michaelcontento
+    user = chmielot
     password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 [filter "github_token"]
     clean = perl -pe \"s/^ *token ?=.*/    token =/i\"
